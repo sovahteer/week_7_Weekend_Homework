@@ -23,4 +23,9 @@ public abstract class Player {
     public int getHp(){
         return hp;
     }
+
+    public int restoreHp (int restore){
+        this.hp += restore;
+        return hp;
+    }
 }
