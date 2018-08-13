@@ -4,15 +4,20 @@ import FantasyGame.Behaviours.IWeapon;
 import FantasyGame.Enemies.Enemy;
 
 public class Weapon implements IWeapon {
-    private WeaponType weapon;
+    private WeaponType weaponType;
+    private int wearAndTear;
 
-    public Weapon(WeaponType weapon) {
-        this.weapon = weapon;
+    public Weapon(WeaponType weaponType) {
+        this.weaponType = weaponType;
+        this.wearAndTear = 0;
     }
 
-    public WeaponType getWeapon(){
-        return this.weapon;
+    public WeaponType getWeaponType(){
+        return this.weaponType;
     }
 
-    public void attack (Enemy enemy){ enemy.takeDamage(this.weapon.getDamage());}
+    public void attack (Enemy enemy){
+        enemy.takeDamage(this.weaponType.getDamage() - this.wearAndTear);
+        this.wearAndTear--;
+    }
 }

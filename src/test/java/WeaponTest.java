@@ -16,6 +16,6 @@ public class WeaponTest {
 
     @Test
     public void hasWeapon(){
-        assertEquals(WeaponType.SWORD, weapon.getWeapon());
+        assertEquals(WeaponType.SWORD, weapon.getWeaponType());
     }
 }
